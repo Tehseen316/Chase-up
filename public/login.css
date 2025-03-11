@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e6f0ff; /* Light blue like Facebook */
+    background-color: #e6f0ff; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,8 @@ body {
 h2 {
     margin-bottom: 15px;
     font-weight: 600;
-    color: #1877f2; /* Facebook Blue */
-    text-align: center; /* Centered */
+    color: #1877f2; 
+    text-align: center;
 }
 
 input {
@@ -51,7 +51,7 @@ button {
     background-color: #1877f2;
     color: white;
     border: none;
-    border-radius: 5px; /* Curved button */
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
