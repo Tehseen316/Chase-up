@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Inventory Management</title>
     <link rel="stylesheet" href="/public/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/scripts/dashboard.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -19,9 +21,33 @@
             <li><a href="login.html" class="logout">Logout</a></li>
         </ul>
     </nav>
+
+    
+   
     
     <div class="container">
-        <h3>Welcome to the Inventory Management System</h3>
+        <h3>Dashboard</h3>
+        <div class="statistics-container">
+            <div class="statistics-box">
+                <h4>Total Products</h4>
+                <p id="total-products">0</p>
+            </div>
+            <div class="statistics-box">
+                <h4>Total Suppliers</h4>
+                <p id="total-suppliers">0</p>
+            </div>
+            <div class="statistics-box">
+                <h4>Total Sales</h4>
+                <p id="total-sales">0</p>
+            </div>
+        </div>
     </div>
+
+    <div class="chart-container">
+        <h3>Sales Overview</h3>
+        <canvas id="salesChart"></canvas>
+    </div>
+    
+    
 </body>
 </html>
