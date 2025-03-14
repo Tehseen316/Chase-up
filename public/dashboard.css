@@ -72,6 +72,46 @@ body {
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 30px;
+    margin-top: -10px;
     color: #1877f2;
 }
+
+.statistics-container {
+    display: flex;
+    justify-content: space-around;
+    margin : 20px 20px;
+}
+
+.statistics-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 25%;
+    gap: 50px;
+}
+
+.statistics-box h4 {
+    font-size: 18px;
+    color: #1877f2;
+    margin-bottom: 10px;
+}
+
+.statistics-box p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.chart-container {
+    width: 89%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
