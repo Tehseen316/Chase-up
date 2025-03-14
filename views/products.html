@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Inventory Management</title>
+    <link rel="stylesheet" href="/public/products.css">
+    <script src="/scripts/products.js" defer></script>
+</head>
+<body>
+    
+   <div id="navbar-container"></div>
+
+    <div class="container">
+        <h3>Manage Products</h3>
+
+        <!-- Search & Filter -->
+        <div class="filter-container">
+            <input type="text" id="search" placeholder="Search products...">
+            <select id="filter">
+                <option value="">Filter by Category</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="food">Food</option>
+            </select>
+        </div>
+
+        <!-- Add Product Form -->
+        <div class="add-product">
+            <h3>Add New Product</h4>
+            <form id="product-form">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <input type="number" id="price" placeholder="Price ($)" required>
+                <input type="number" id="stock" placeholder="Stock Quantity" required>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+        <!-- Product List Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <tr>
+                    <td>Sample Product</td>
+                    <td>$10</td>
+                    <td>50</td>
+                    <td>
+                        <button class="edit-btn">✏ Edit</button>
+                        <button class="delete-btn">🗑 Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
