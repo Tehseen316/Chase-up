@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers | Inventory Management</title>
+    <link rel="stylesheet" href="/public/suppliers.css">
+    <script src="/scripts/suppliers.js" defer></script>
+
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+   
+    <div class="container">
+        <h3>Manage Suppliers</h3>
+
+        <div class="filter-container">
+            <input type="text" id="search-supplier" placeholder="Search suppliers...">
+        </div>
+
+        <div class="add-supplier">
+            <h3>Add New Supplier</h3>
+            <form id="supplier-form">
+                <input type="text" id="supplier-name" placeholder="Supplier Name" required>
+                <input type="text" id="supplier-contact" placeholder="Contact" required>
+                <input type="text" id="supplier-products" placeholder="Products Supplied" required>
+                <button type="submit">Add Supplier</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Products Supplied</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="supplier-list">
+                <tr>
+                    <td>Sample Supplier</td>
+                    <td>+123456789</td>
+                    <td>Electronics, Clothing</td>
+                    <td>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

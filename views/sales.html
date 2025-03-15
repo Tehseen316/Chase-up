@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Tracking | Inventory Management</title>
+    <link rel="stylesheet" href="/public/sales.css">
+    <script src="/scripts/sales.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <h1>Sales Tracking</h1>
+
+        <!-- Record a New Sale (POS Style) -->
+        <div class="pos-container">
+            <h4>Record a New Sale</h4>
+            <form id="sales-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-name">Product</label>
+                        <select id="product-name">
+                            <option value="">Select Product</option>
+                            <option value="Laptop" data-price="800">Laptop - $800</option>
+                            <option value="T-Shirt" data-price="20">T-Shirt - $20</option>
+                            <option value="Shoes" data-price="50">Shoes - $50</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" placeholder="Enter quantity" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="total-price">Total Price</label>
+                        <input type="text" id="total-price" placeholder="Total Price" readonly>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Add Sale</button>
+            </form>
+        </div>
+
+        <!-- Generate Sales Report -->
+        <div class="report-container">
+            <h4>Generate Sales Report</h4>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date">
+                </div>
+
+                <div class="form-group">
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date">
+                </div>
+            </div>
+
+            <button id="generate-report" class="btn-primary">Generate Report</button>
+        </div>
+    </div>
+
+</body>
+</html>
