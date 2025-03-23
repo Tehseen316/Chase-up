@@ -1,10 +1,10 @@
 const { Sequelize } = require('sequelize');
 
-// PostgreSQL Database Configuration
-module.exports = new Sequelize('userdb', 'postgres', 'Nouman2k4', {
+// MySQL Database Configuration
+module.exports = new Sequelize('userdb', 'root', '1234', {
   host: 'localhost',
-  dialect: 'postgres', // Changed to PostgreSQL
-  port: 5432, // PostgreSQL default port
+  dialect: 'mysql', // Changed to MySQL
+  port: 3306, // MySQL default port
   pool: {
     max: 5,
     min: 0,

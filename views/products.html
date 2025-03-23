@@ -9,12 +9,11 @@
 </head>
 <body>
     
-   <div id="navbar-container"></div>
+    <div id="navbar-container"></div>
 
     <div class="container">
         <h3>Manage Products</h3>
 
-    
         <div class="filter-container">
             <input type="text" id="search" placeholder="Search products...">
             <select id="filter">
@@ -25,17 +24,21 @@
             </select>
         </div>
 
-  
         <div class="add-product">
-            <h3>Add New Product</h4>
+            <h3>Add New Product</h3>
             <form id="product-form">
                 <input type="text" id="name" placeholder="Product Name" required>
                 <input type="number" id="price" placeholder="Price ($)" required>
                 <input type="number" id="stock" placeholder="Stock Quantity" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="food">Food</option>
+                </select>
                 <button type="submit">Add Product</button>
             </form>
         </div>
-
 
         <table>
             <thead>
@@ -43,6 +46,7 @@
                     <th>Product</th>
                     <th>Price</th>
                     <th>Stock</th>
+                    <th>Category</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -51,6 +55,7 @@
                     <td>Sample Product</td>
                     <td>$10</td>
                     <td>50</td>
+                    <td>Electronics</td>
                     <td>
                         <button class="edit-btn">✏ Edit</button>
                         <button class="delete-btn">🗑 Delete</button>
