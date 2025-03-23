@@ -32,6 +32,11 @@ body {
   
 }
 
+.container h1{
+    color: #1877f2;
+    text-align: center;
+}
+
 .container h3{
     color: #1877f2;
 }
