@@ -21,26 +21,35 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="product-name">Product</label>
-                        <select id="product-name">
+                        <select id="product-name" required>
                             <option value="">Select Product</option>
-                            <option value="Laptop" data-price="800">Laptop - $800</option>
-                            <option value="T-Shirt" data-price="20">T-Shirt - $20</option>
-                            <option value="Shoes" data-price="50">Shoes - $50</option>
+                            <!-- Products will be dynamically populated by JavaScript -->
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" placeholder="Enter quantity" required>
+                        <input type="number" id="quantity" 
+                               placeholder="Enter quantity" 
+                               min="1" 
+                               required>
                     </div>
 
                     <div class="form-group">
                         <label for="total-price">Total Price</label>
-                        <input type="text" id="total-price" placeholder="Total Price" readonly>
+                        <input type="text" 
+                               id="total-price" 
+                               placeholder="Total Price" 
+                               readonly 
+                               aria-label="Calculated total price">
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary">Add Sale</button>
+                <div id="stock-info" class="stock-warning"></div>
+
+                <button type="submit" class="btn-primary" id="add-sale-btn" disabled>
+                    Add Sale
+                </button>
             </form>
         </div>
 
@@ -50,16 +59,26 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="start-date">Start Date</label>
-                    <input type="date" id="start-date">
+                    <input type="date" 
+                           id="start-date" 
+                           max="9999-12-31">
                 </div>
 
                 <div class="form-group">
                     <label for="end-date">End Date</label>
-                    <input type="date" id="end-date">
+                    <input type="date" 
+                           id="end-date" 
+                           max="9999-12-31">
                 </div>
             </div>
 
             <button id="generate-report" class="btn-primary">Generate Report</button>
+        </div>
+
+        <!-- Sales Report Display -->
+        <div id="sales-report-container" class="report-display">
+            <h4>Sales Report</h4>
+            <div id="report-details"></div>
         </div>
     </div>
 

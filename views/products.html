@@ -5,30 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | Inventory Management</title>
     <link rel="stylesheet" href="/public/products.css">
-    <script src="/scripts/products.js" defer></script>
 </head>
 <body>
-    
     <div id="navbar-container"></div>
 
     <div class="container">
         <h1>Manage Products</h1>
 
-       
+        <div class="filter-container">
+            <input type="text" id="search-product" placeholder="Search products...">
+        </div>
 
         <div class="add-product">
-            <h3>Add New Product</h3>
+            <h3>Add Product</h3>
             <form id="product-form">
+                <input type="hidden" id="product-id">
                 <input type="text" id="name" placeholder="Product Name" required>
-                <input type="number" id="price" placeholder="Price ($)" required>
-                <input type="number" id="stock" placeholder="Stock Quantity" required>
+                <input type="number" id="price" placeholder="Price ($)" min="0" step="0.01" required>
+                <input type="number" id="stock" placeholder="Stock Quantity" min="0" required>
                 <select id="category" required>
                     <option value="">Select Category</option>
                     <option value="Electronics">Electronics</option>
                     <option value="Clothing">Clothing</option>
                     <option value="Food">Food</option>
                 </select>
-                <button type="submit">Add Product</button>
+                <button type="submit">Save Product</button>
+                <button type="button" id="cancel-edit" style="display: none;">Cancel</button>
             </form>
         </div>
 
@@ -42,19 +44,10 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id="product-list">
-                <tr>
-                    <td>Sample Product</td>
-                    <td>$10</td>
-                    <td>50</td>
-                    <td>Electronics</td>
-                    <td>
-                        <button class="delete-btn">🗑 Delete</button>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody id="product-list"></tbody>
         </table>
     </div>
 
+    <script src="/scripts/products.js"></script>
 </body>
 </html>
