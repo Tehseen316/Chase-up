@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Alerts | Inventory Management</title>
+    <link rel="stylesheet" href="/public/stocks.css">
+    <script src="/scripts/stocks.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <h1>Stock Alerts</h1>
+
+        <!-- Low Stock Products Table -->
+        <div class="stock-container">
+            <h4>Low Stock Products</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Stock Left</th>
+                        <th>Reorder</th>
+                    </tr>
+                </thead>
+                <tbody id="stock-list">
+                    <tr>
+                        <td>Laptop</td>
+                        <td>3</td>
+                        <td><a href="products.html" class="btn-reorder">Reorder</a></td>
+                    </tr>
+                    <tr>
+                        <td>T-Shirt</td>
+                        <td>1</td>
+                        <td><a href="products.html" class="btn-reorder">Reorder</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
