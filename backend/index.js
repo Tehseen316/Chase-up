@@ -1,18 +1,32 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const db = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
 const prodRoutes = require('./routes/productRoutes');
+const supplierRoutes = require('./routes/supplierRoutes');
+const saleRoute = require('./routes/saleRoutes');
 
+// Import the Sale model
+const Sale = require('./models/Sale');
 const app = express();
 const PORT = process.env.PORT || 5004;
 
 // Middleware
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Logging middleware
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+    console.log('Headers:', req.headers);
+    console.log('Body:', req.body);
+    next();
+});
 
 // Connect to MySQL database
 const connectDB = async () => {
@@ -20,11 +34,12 @@ const connectDB = async () => {
         await db.authenticate();
         console.log('✅ Database connected...');
         
-        await db.sync({ alter: true });  // Syncing models (use migrations for production)
+        // Sync the database (Sale model is now registered)
+        await db.sync({ alter: true });
         console.log('✅ Database synchronized...');
     } catch (err) {
         console.error('❌ Database connection error:', err);
-        process.exit(1); // Exit process if DB fails
+        process.exit(1);
     }
 };
 connectDB();
@@ -32,11 +47,19 @@ connectDB();
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/products', prodRoutes);
-
-
+app.use('/api/suppliers', supplierRoutes);
+app.use('/api/sales', saleRoute);
 app.get('/', (req, res) => {
     res.send('🚀 Chase Up Inventory Management API is running');
 });
 
-// Start server
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Unhandled error:', err);
+    res.status(500).json({
+        message: 'Unexpected server error',
+        error: err.message
+    });
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
