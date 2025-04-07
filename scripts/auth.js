@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const email = document.querySelector("#signupEmail").value;
             const password = document.querySelector("#signupPassword").value;
             const confirmPassword = document.querySelector("#signupConfirmPassword").value;
-            const role = document.querySelector("#signupRole").value; 
+          
 
             if (password !== confirmPassword) {
                 alert("Passwords do not match!");
                 return;
             }
 
-            const userData = { fullName, email, password, role };
+            const userData = { fullName, email, password };
 
             try {
                 const response = await fetch("http://localhost:5004/api/users/register", {

@@ -18,7 +18,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { fullName, email, password, role } = req.body;
+    const { fullName, email, password } = req.body;
 
     try {
         const existingUser = await User.findOne({ where: { email } });
@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
             fullName,
             email,
             password: hashedPassword,
-            role
+
         });
 
         res.status(201).json({ message: 'User registered successfully', user: newUser });
